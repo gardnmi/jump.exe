@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/gardnmi/jump.exe/compare/v0.1.3...v0.2.0) (2026-09-29)
+
+
+### Features
+
+* bring each grief stage to life with reactive environments ([#11](https://github.com/gardnmi/jump.exe/issues/11)) ([ade6028](https://github.com/gardnmi/jump.exe/commit/ade60287923f149c3c84a83918cd8fadbafbcd47))
+
 ## [0.1.3](https://github.com/gardnmi/jump.exe/compare/v0.1.2...v0.1.3) (2026-09-29)
 
 
