@@ -31,7 +31,7 @@ jobs:
         with:
           name: runtime
           path: dist
-      - uses: googleapis/release-please-action@v4
+      - uses: googleapis/release-please-action@v5
         id: release
       - name: Check release PRs and publish complete downloads
         env:
