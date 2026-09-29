@@ -9,8 +9,10 @@ The third-party movement sound effects are documented below.
 [`docs/story-preview.png`](../docs/story-preview.png) is promotional cover art
 generated with the built-in OpenAI image-generation tool. The supplied Jump King
 cover guided the composition; the game's character atlas guided the developer's
-outfit and palette. The [generation prompt](../docs/story-preview.prompt.txt) is
-included. The previous five-stage gameplay illustration is preserved as
+outfit and palette. The [generation prompt](../docs/story-preview.prompt.txt) and
+[anatomy correction prompt](../docs/story-preview-anatomy.prompt.txt) are included.
+The anatomy edit reconnects the raised arm at the shoulder and revises the hands
+and legs while preserving the cover layout. The previous five-stage gameplay illustration is preserved as
 [`docs/stage-preview.png`](../docs/stage-preview.png).
 
 ## Character and environment
