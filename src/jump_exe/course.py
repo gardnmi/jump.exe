@@ -60,7 +60,7 @@ ROOMS = (
          'Cross three red build-error panels. The short window has no enclosing floor.',
          'The first genuinely exposed misses fall toward the earlier terminal and settings window.', 'errors'),
     Room('FAN AT 100%',(20,-1036,275,380),(
-        b('floor',0,356,275,24,'case'), b('entry',200,300,75,24,'case'),
+        b('floor',0,356,275,24,'case'), b('entry',200,300,75,18,'case'),
         b('tooth',0,268,74,22,'heatsink'), b('valve',92,188,76,24,'heatsink'),
         b('rim',214,126,61,24,'heatsink'), b('exit',80,50,96,26,'case'),
         b('jaw',0,104,24,164,'heatsink'),
