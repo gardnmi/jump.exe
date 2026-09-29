@@ -22,7 +22,7 @@ MAX_RISE = PROFILE.jump_y_max**2/(2*PROFILE.gravity)
 DEPARTURES = {
     2: ('exit',), 3: ('lip',), 4: ('exit',), 5: ('exit','wall'),
     6: ('exit',), 7: ('exit',), 8: ('exit','cap','mullion'), 9: ('rim',),
-    10: ('exit',), 11: ('exit',), 12: ('exit',), 13: ('exit','rail'),
+    10: ('exit',), 11: ('exit',), 12: ('exit',), 13: ('exit',),
 }
 
 
