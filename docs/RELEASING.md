@@ -18,10 +18,14 @@ manifest is generated from the files actually packaged.
 
 ## Why the workflow is arranged this way
 
-Events created by `GITHUB_TOKEN` do not normally start other workflows. Therefore
-publishing runs in the **same workflow** as Release Please; it does not depend
-on a second workflow triggered by the release tag. The release job explicitly
-dispatches CI on Release Please's PR branch so its checks also run without a PAT.
+Most events created by `GITHUB_TOKEN` do not start other workflows. Bot-created
+pull-request events now produce runs requiring manual approval. Publishing runs
+in the **same workflow** as Release Please; it does not depend on a second workflow
+triggered by the release tag. The release job explicitly dispatches read-only CI
+on Release Please's PR branch so its checks run without a PAT. The three generated
+version/changelog files are excluded from the ordinary PR trigger to avoid a
+duplicate approval-gated run. Code PRs still run the ordinary checks, and every
+commit to `main` is tested before the release job can run.
 
 Enable **Settings → Actions → General → Allow GitHub Actions to create and approve
 pull requests** when setting up a fork. This repository already has it enabled.
@@ -56,4 +60,5 @@ cannot replace the working installation.
 
 Upstream references:
 [Release Please Action](https://github.com/googleapis/release-please-action) and
-[manifest configuration](https://github.com/googleapis/release-please/blob/main/docs/manifest-releaser.md).
+[manifest configuration](https://github.com/googleapis/release-please/blob/main/docs/manifest-releaser.md),
+plus [GitHub token event rules](https://docs.github.com/en/actions/concepts/security/github_token).

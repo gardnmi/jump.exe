@@ -1,6 +1,12 @@
 name: CI
 on:
   pull_request:
+    # Release Please's version-only PR is checked by explicit workflow_dispatch.
+    # Avoid a duplicate bot-created run waiting for GitHub's manual approval.
+    paths-ignore:
+      - version.txt
+      - CHANGELOG.md
+      - .release-please-manifest.json
   workflow_dispatch:
   workflow_call:
 
