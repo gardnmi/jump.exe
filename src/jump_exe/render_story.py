@@ -21,7 +21,7 @@ def render(path,t=2.):
     surface=cairo.ImageSurface(cairo.FORMAT_RGB24,2100,670)
     c=cairo.Context(surface)
     c.set_source_rgb(.045,.055,.065);c.paint()
-    text(c,"THE WHITE PILL / AN OMARCHY DESKTOP ASCENT",24,32,19)
+    text(c,"JUMP.EXE / AN OMARCHY DESKTOP ASCENT",24,32,19)
     for stage,rank in enumerate((0,4,6,10,14)):
         color=THEMES[stage][2]
         left=stage*420
