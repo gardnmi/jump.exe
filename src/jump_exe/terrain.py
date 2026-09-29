@@ -19,7 +19,7 @@ LABELS={
     10:{'entry':'ESC','control':'CTRL','undo':'Z','exit':'?'},
     12:{'entry':'USB-C','fork':'AGENT','branch':'YOU','exit':'CONNECTED'},
     13:{'entry':'BUILD OK','bridge':'TESTS OK','exit':'MERGE'},
-    14:{'entry':'SPACE','landing':'SHIFT','bridge':'CHECKS PASS','summit':'ENTER'},
+    14:{'entry':'SPACE','landing':'SHIFT','bridge':'RUN','bank':'CHECKS PASS','release':'CTRL','summit':'ENTER'},
 }
 
 

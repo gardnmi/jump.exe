@@ -357,11 +357,12 @@ class TowerTests(unittest.TestCase):
             candidates.sort(key=lambda key:abs(platforms[key].y-king.y))
             direct=any(find_jump(king,key,platforms,bounds)[0] is not None
                        for key in candidates)
-            if not direct and fall['landed']=='6:floor':
-                # The dialog's left catch rejoins via DENY, not through its
-                # solid stem to ALLOW ONCE. Replay both real jumps, including
-                # the actual landing on the optional recovery button.
-                for target in ('6:pan','6:beam'):
+            if not direct and fall['landed'] in ('6:floor','12:floor'):
+                # Both left basins need a connector around their solid divider.
+                # Replay from the actual fall landing through the optional catch.
+                recovery={'6:floor':('6:pan','6:beam'),
+                          '12:floor':('12:catch','12:branch')}
+                for target in recovery[fall['landed']]:
                     landed,witness=find_jump(king,target,platforms,bounds)
                     self.assertIsNotNone(landed,fall)
                     replay_step(king,witness,platforms,bounds)

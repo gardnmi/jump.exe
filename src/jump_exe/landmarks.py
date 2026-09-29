@@ -189,10 +189,14 @@ def background(c,rank):
         label(c,'ready to merge',14,261,6,CYAN)
     else:
         heading(c,rank,('ENJOY THE RIDE.',))
-        pane(c,12,68,121,151,'YOU / direction',CYAN)
-        pane(c,147,68,119,151,'AGENT / execution',GREEN)
-        label(c,'what next?',20,143,8,CYAN)
-        label(c,'ready when you are',156,143,7,GREEN)
+        pane(c,12,332,121,151,'YOU / direction',CYAN)
+        pane(c,147,332,110,151,'AGENT / execution',GREEN)
+        label(c,'what next?',20,365,8,CYAN)
+        label(c,'ready when you are',153,365,6,GREEN)
+        pane(c,14,167,104,88,'review.diff',CYAN)
+        lines(c,[('+ build something',GREEN),('> read the patch',TEXT),
+                 ('> own the result',CYAN)],22,194,6,13)
+        label(c,'human in the loop',134,272,6,CYAN)
     dressing(c,rank)
     stage_scenes.dressing(c,rank)
 
@@ -246,7 +250,7 @@ def behind(c,rank,t,events=()):
     elif rank==13:
         glow(c,43,89,40,GREEN,.035+.025*math.sin(t))
     elif rank==14:
-        if int(t)%2:rect(c,113,197,5,7,CYAN)
+        if int(t)%2:rect(c,113,447,5,7,CYAN)
         for i in range(4):
             x=20+(t*18+i*65)%243
             rect(c,x,225,3,1,mix(BG,CYAN,.5))

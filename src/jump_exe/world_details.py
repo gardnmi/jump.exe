@@ -151,11 +151,11 @@ def dressing(c,rank):
         chip(c,13,211,18,14,GREEN)
         label(c,'small changes',14,73,6,MUTED)
     elif rank==14:
-        trace(c,((28,239),(28,225),(137,225),(137,78)),mix(BG,CYAN,.3))
-        trace(c,((137,78),(138,78),(138,66),(236,66)),mix(BG,GREEN,.35))
+        trace(c,((42,406),(80,406),(80,285),(226,285),(226,205)),mix(BG,CYAN,.3))
+        trace(c,((226,205),(236,205),(236,66)),mix(BG,GREEN,.35))
         for i in range(3):
             rect(c,18+i*7,63,3,2,mix(GREEN,TEXT,.25))
-        label(c,'you + tools',157,237,5,mix(BG,TEXT,.5))
+        label(c,'you + tools',157,475,5,mix(BG,TEXT,.5))
 
 
 def animate(c,rank,t,events):
@@ -304,12 +304,12 @@ def animate(c,rank,t,events):
             if count>i*2:
                 rect(c,117,161+i*14,3,3,GREEN)
     elif rank==14:
-        trace(c,((28,239),(28,225),(137,225),(137,78),(138,78),(138,66),(236,66)),
+        trace(c,((42,406),(80,406),(80,285),(226,285),(226,205),(236,205),(236,66)),
               mix(BG,CYAN,.3),tick*30)
         # A calm cadence of reviewed work; success is shared, not an endless alert.
         for i in range(3):
             age=(tick*.15+i/3)%1
-            rect(c,152+i*14,224-age*23,1,1,mix(BG,CYAN,(1-age)*.65))
+            rect(c,152+i*14,474-age*23,1,1,mix(BG,CYAN,(1-age)*.65))
         if active(events,'penguin'):
             for i in range(5):
                 x=208+i*9;y=24+math.sin(tick+i)*3

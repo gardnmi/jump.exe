@@ -12,8 +12,9 @@ def in_world(ending):
 
 
 def focus_summit(camera,tower,dt):
-    """Ease the existing camera to frame the actual final window; no zoom or teleport."""
+    """Ease to the summit celebration; the tall approach remains below the frame."""
     _,y,_,height=tower.rectangle(14)
+    height=min(height,330*tower.scale)
     top=camera.bounds[1]+max(28,(camera.bounds[3]-height)/2)
     target=min(0.,y-top)
     camera.offset+=(target-camera.offset)*(1-math.exp(-4*max(0,dt)))
