@@ -19,6 +19,8 @@ jobs:
           pacman -Syu --noconfirm --needed git python python-gobject python-cairo
           gtk3 gtk4 gtk4-layer-shell gstreamer gst-plugins-base gst-plugins-good
           ttf-cascadia-mono-nerd shellcheck desktop-file-utils
+      - name: Create an unprivileged test user
+        run: useradd --create-home runner
       - uses: actions/checkout@v7
       - name: Check launchers
         run: |
@@ -27,7 +29,7 @@ jobs:
           python -S launch.py --version
           python -m compileall -q src tests tools install.py launch.py
       - name: Test physics, artwork, audio, and installation
-        run: python tools/test.py
+        run: runuser -u runner -- python tools/test.py
       - name: Build runtime
         run: |
           python tools/build_release.py
