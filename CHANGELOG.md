@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/gardnmi/jump.exe/compare/v0.1.1...v0.1.2) (2026-09-29)
+
+
+### Bug Fixes
+
+* widen cooling-window entry clearance ([#7](https://github.com/gardnmi/jump.exe/issues/7)) ([347a257](https://github.com/gardnmi/jump.exe/commit/347a25723a42eea6c0c02e7c667cc4e7ca8112c5))
+
 ## [0.1.1](https://github.com/gardnmi/jump.exe/compare/v0.1.0...v0.1.1) (2026-09-29)
 
 
