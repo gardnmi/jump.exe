@@ -1,0 +1,41 @@
+name: CI
+on:
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test and package on Arch
+    runs-on: ubuntu-latest
+    container: archlinux:base
+    timeout-minutes: 15
+    steps:
+      - name: Install test dependencies
+        run: >-
+          pacman -Syu --noconfirm --needed git python python-gobject python-cairo
+          gtk3 gtk4 gtk4-layer-shell gstreamer gst-plugins-base gst-plugins-good
+          ttf-cascadia-mono-nerd shellcheck desktop-file-utils
+      - uses: actions/checkout@v6
+      - name: Check launchers
+        run: |
+          bash -n jump.exe install.sh
+          shellcheck jump.exe install.sh
+          python -S launch.py --version
+          python -m compileall -q src tests tools install.py launch.py
+      - name: Test physics, artwork, audio, and installation
+        run: python tools/test.py
+      - name: Build runtime
+        run: |
+          python tools/build_release.py
+          cd dist
+          sha256sum -c SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: runtime
+          path: dist/*
+          if-no-files-found: error
+          retention-days: 7

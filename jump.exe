@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+root=$(dirname -- "$(realpath -- "$0")")
+exec /usr/bin/python -I "$root/launch.py" "$@"
