@@ -21,7 +21,8 @@ class ShortcutTests(unittest.TestCase):
                               ('7:entry','7:exit'),
                               ('8:floor','8:hinge'),('10:entry','10:undo'),
                               ('12:fork','12:exit'),('14:entry','14:bridge'),
-                              ('14:landing','14:summit')):
+                              ('14:landing','14:bank'),('14:bridge','14:release'),
+                              ('14:bank','14:summit'),('12:catch','12:exit')):
             self.assertFalse(within_jump_envelope(p[source],p[target],1),(source,target))
 
     def test_review_divider_forces_the_left_crossing(self):

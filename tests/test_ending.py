@@ -21,6 +21,7 @@ class EndingTests(unittest.TestCase):
         for bounds in ((0,0,480,360),(0,0,1600,900),(0,0,2048,1152),(100,0,900,1600)):
             tower=Tower(bounds,42);camera=Camera(bounds)
             _,y,_,h=tower.rectangle(14)
+            h=min(h,330*tower.scale)
             camera.offset=y+38*tower.scale-bounds[1]-bounds[3]*.38
             before=camera.offset
             focus_summit(camera,tower,1/60)

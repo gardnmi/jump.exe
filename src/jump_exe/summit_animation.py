@@ -69,24 +69,26 @@ def celebration(c,t):
     # on real landing surfaces, waving and hopping rather than blocking them.
     if age<3.1:
         creature(c,'duck',-8+age*106,91-12*math.sin(age*2),t,1,True)
-    creature(c,'bot',151,112-round(max(0,math.sin(age*5))*4),t,1,True)
-    creature(c,'penguin',48,218-round(max(0,math.sin(age*4))*7),t,1,True)
-    guide(c,248,288,t,True)
+    blocks={b.name:b for b in ROOMS[14].blocks}
+    bank,release,bridge=(blocks[key] for key in ('bank','release','bridge'))
+    creature(c,'bot',bank.x+bank.w*.75,bank.y-round(max(0,math.sin(age*5))*4),t,1,True)
+    creature(c,'penguin',release.x+release.w*.5,release.y-round(max(0,math.sin(age*4))*7),t,1,True)
+    guide(c,bridge.x+bridge.w*.5,bridge.y,t,True)
 
 
 def terminal(c,t):
     if t<4.5:return
-    # Occupy the clear space between CHECKS PASS and SHIFT, not their edges.
-    x,y,w,h=18,134,246,78
+    # The inset review terminal expands between CTRL and CHECKS PASS.
+    x,y,w,h=18,152,236,64
     rect(c,x,y,w,h,CYAN);rect(c,x+1,y+1,w-2,h-2,DEEP)
     rect(c,x+2,y+2,w-4,10,PANEL)
     label(c,'[+]  agent / one small project',x+6,y+9,5,JADE)
-    type_line(c,'you> '+PROJECT_PROMPT,x+8,y+26,t,4.7,7,WHITE)
-    type_line(c,'agent> '+AGENT_REPLY,x+8,y+41,t,5.95,6,CYAN)
-    type_line(c,'[+] hand-assembling the borrow checker...',x+8,y+58,t,7.25,6,TEXT,44)
+    type_line(c,'you> '+PROJECT_PROMPT,x+8,y+24,t,4.7,7,WHITE)
+    type_line(c,'agent> '+AGENT_REPLY,x+8,y+37,t,5.95,6,CYAN)
+    type_line(c,'[+] hand-assembling the borrow checker...',x+8,y+50,t,7.25,6,TEXT,44)
     if t>8.35:
-        label(c,'estimated time: yes',x+8,y+70,6,YELLOW)
-    elif int(t*3)%2:rect(c,x+8,y+63,4,6,TEXT)
+        label(c,'estimated time: yes',x+8,y+59,6,YELLOW)
+    elif int(t*3)%2:rect(c,x+8,y+53,4,6,TEXT)
 
 
 def draw_world(c,rank,ending,foreground,background):
@@ -111,7 +113,7 @@ def draw_world(c,rank,ending,foreground,background):
         rect(c,x-2,foot-20,1,8,CYAN)
         rect(c,x+2,foot-23,2,1,WHITE)
     if t>=4.4:
-        object_art(c,'keyboard',198,38,'manual',t,4)
+        object_art(c,'keyboard',224,38,'manual',t,4)
         object_art(c,'coffee',282,38,'',t,4)
     terminal(c,t)
     celebration(c,t)

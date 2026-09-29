@@ -46,7 +46,7 @@ floor beneath it. Each window in `course.py` names its lesson and its failure co
 | Anger | Cross build errors; enter the hot PC fan basin and circle its heat sinks; use the git deletion panel for rebounds. | The error window is exposed. The fan housing and git footer have local catch floors. |
 | Bargaining | Jump around a permission dialog, climb test-file tabs and pass around the review pane's diff hunks. | The test file has no enclosing floor; the dialog base and review footer give relief. |
 | Depression | Climb a depleted battery, cross two disconnected keys to the left and reverse across a void; reach the blank editor at 3 a.m. | Selected misses pass through earlier windows. The desk restores a broad recovery floor. |
-| Acceptance | Cross around the USB hub, climb passing CI jobs, then reach the white pill on ENTER. | The motherboard and cable connectors provide relief before the final exposed transfers. Completion does not disable falling. |
+| Acceptance | Cross the USB hub and passing CI jobs, then face the summit's narrow keys, capped wall bank, reversal and final gap to ENTER. | The motherboard and recovery connector catch selected long falls. The hardest room comes last, with local bank retries and exposed upper transfers. |
 
 ## The windows are part of the terrain
 
@@ -77,7 +77,7 @@ respawn checkpoints. A catch surface protects a trajectory, not all future progr
 
 ## Validation and concrete fall examples
 
-`routecheck.py` plans and replays a continuous **57-jump** itinerary. Each jump begins
+`routecheck.py` plans and replays a continuous **59-jump** itinerary. Each jump begins
 where the previous one actually landed. Ground movement obeys wall collisions;
 charging and release use real simulation ticks. The check rejects standing inside
 terrain. It does not move the character directly to a convenient launch point.
@@ -86,9 +86,9 @@ The first seven jumps each have at least five consecutive successful charge valu
 on the seed-42 reference route. A mistiming audit perturbs each selected charge by
 ±2, ±4 and ±8 ticks, clamped to the supported range. On the 1600×900, seed-42 course:
 
-- 196 tested attempts miss the intended landing.
-- 146 of those are caught in the same window.
-- Eleven lose at least two native screen heights (720 world units).
+- 209 tested attempts miss the intended landing.
+- 155 of those are caught in the same window.
+- Seventeen lose at least two native screen heights (720 world units).
 - The largest tested setback from either of the first two windows is 104 world units.
 - An undercharged first crossing and a rebound off its entry both land on the
   settings window's lower sill; a jump back to the keyboard rejoins the route.
@@ -99,7 +99,9 @@ The [recording-driven refactor](PLAYTEST.md) also checks routes that bypass the
 walkthrough. A conservative jump envelope rejects early entries into every window
 from BUILD FAILED onward; a separate sampled graph searches casing tops, catch
 floors, overhangs and rebounds. The [continuous replay](course-playthrough.mp4)
-shows the revised course with normal physics.
+shows the earlier layout with normal physics. The [summit replay](summit-gauntlet.mp4)
+shows the new final challenge; its measured timing and recovery checks are in the
+[summit follow-up](PLAYTEST.md#follow-up-the-summit-must-be-the-hardest-room).
 
 These are results for a particular route and perturbation set, not player failure
 rates or proof that the course is fun. Unit checks also replay the entire itinerary

@@ -117,7 +117,8 @@ ROOMS = (
         b('floor',0,308,295,22,'board'), b('entry',200,276,95,20,'cable'),
         b('trunk',124,160,26,148,'cable'), b('arm',148,242,56,14,'cable'),
         b('neck',124,138,26,22,'cable'), b('joint',150,228,12,14,'cable'),
-        b('fork',162,220,90,16,'cable'), b('branch',26,122,124,16,'cable'),
+        b('fork',162,220,90,16,'cable'), b('branch',64,122,86,16,'cable'),
+        b('catch',0,226,30,14,'cable'),
         b('exit',204,48,91,18,'cable'),
     ),('entry','fork','branch','exit'),
          'Climb a shared workstation: cross the USB hub, circle its connectors, then reach the connected terminal.',
@@ -128,13 +129,15 @@ ROOMS = (
     ),('entry','bridge','exit'),
          'Climb green CI jobs, then bank off the visible right-hand status rail to reach MERGE.',
          'The outer edge remains exposed; the shared workstation below catches inward mistakes.', 'ci'),
-    Room('ENJOY THE RIDE',(20,-4480,295,330),(
-        b('entry',196,288,99,24,'key'), b('landing',10,218,106,24,'key'),
-        b('bridge',86,112,135,18,'panel'), b('summit',180,38,115,22,'key'),
-        b('tower',272,60,23,160,'case'), b('foot',272,312,23,18,'case'),
-    ),('entry','landing','bridge','summit'),
-         'Cross left from SPACE to SHIFT, make the tall jump to CHECKS PASS, then reverse toward ENTER and the white pill.',
-         'The climb ends on a broad ENTER key, but falling remains physical.', 'desktop'),
+    Room('ENJOY THE RIDE',(20,-4700,295,550),(
+        b('entry',196,508,99,24,'key'), b('landing',22,406,42,18,'key'),
+        b('bridge',172,302,42,16,'panel'), b('bank',136,220,66,16,'panel'),
+        b('release',30,130,38,18,'key'), b('summit',210,38,85,22,'key'),
+        b('tower',264,60,23,280,'case'), b('hood',224,60,40,79,'case'),
+        b('foot',272,532,23,18,'case'),
+    ),('entry','landing','bridge','bank','release','summit'),
+         'Commit across narrow keys, bank off the case to clear the check overhang, then reverse left before the exposed final jump to ENTER.',
+         'The central opening carries missed upper jumps past the small keys into earlier windows; SPACE catches some right-side mistakes.', 'desktop'),
 )
 
 START = '0:floor'

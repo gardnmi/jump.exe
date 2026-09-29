@@ -39,7 +39,7 @@ original to this course.
 | Permissions / tests | ALLOW ONCE and DENY offer right- and left-side recovery routes around the solid dialog stem. Both feed ASK EVERY TIME, then THIS FILE. The following test tabs remain exposed. |
 | Review | A tall solid diff divider replaces the right-hand stepping stone. Climb REVIEW, cross left to the deleted hunk, then clear the divider. Landing on its narrow crown is a legitimate precision alternative to the CHANGE/APPROVE setup. |
 | Depression | APPROVE can no longer skip the battery to SLEEP. ESC cannot jump straight to Z: CTRL sets up the taller left jump, followed by the reversal toward `?`. The desk retains its local catch. |
-| Acceptance | The lower AGENT connector can no longer jump directly to CONNECTED: cross through the YOU side of the hub. A strong entry-to-YOU jump remains possible. The CI status rail provides a visible bank. At the summit, SPACE → SHIFT → CHECKS PASS → ENTER is a required sequence. |
+| Acceptance | The lower AGENT connector can no longer jump directly to CONNECTED: cross through the YOU side of the hub. A strong entry-to-YOU jump remains possible. The CI status rail provides a visible bank. The summit gauntlet now requires SPACE → SHIFT → RUN → CHECKS PASS → CTRL → ENTER. |
 
 Window placement is measured against **every solid surface**, including the lowest
 catch floor and small connector stubs. Some representative changes, in native units:
@@ -142,9 +142,39 @@ from the first's actual landing with no repositioning. The
 [first-jump replay](tests-jump-proof.mp4) and
 [return trajectory](tests-exit-jump-proof.png) use the real renderer and physics.
 
+## Follow-up: the summit must be the hardest room
+
+The old final window offered three broad, open jumps. Its replacement is a
+550-unit-tall hardware gauntlet, extending upward while preserving the incoming
+SPACE key's world position. [Layout](summit-gauntlet.png) ·
+[Normal-physics replay](summit-gauntlet.mp4).
+
+SHIFT and RUN are 42 units wide; CTRL is 38. A long left crossing and a precise
+return lead to RUN. The casing forces a rightward bank around CHECKS PASS, while
+its underside rejects overcharging. From the supported right quarter of RUN,
+30–32 charge ticks succeed across the four tested display shapes and three seeds;
+full charge fails. Reverse toward CTRL, then commit across the last gap to ENTER.
+The ENTER platform provides room for the earned ending animation.
+
+The upper steps cannot be skipped by jumping from lower platforms, and the casing
+tops are covered by ENTER. Sampled collision searches include edge overhang,
+every charge, and all three release directions on landscape and portrait screens.
+The continuous route now has **59 jumps**, replayed from each previous landing.
+
+The reference mistiming audit includes local retries at RUN and upper misses that
+fall about 890 units into the paired workstation. Its left basin now has a small
+USB recovery connector; the YOU platform is recessed to clear that return arc.
+This permits climbing out of the catch without a reset. The audit records 209
+misses overall, 155 same-window catches, and 17 falls of at least two screens.
+These are sampled outcomes, not player failure rates. All 102 game tests pass.
+
+The artwork follows the longer climb, and the ending camera frames its upper
+330 units. Celebration characters perch on the new real platforms, with the
+Rust-to-assembly terminal fitted between CTRL and CHECKS PASS.
+
 ## Summit finale
 
-`render_ending.py` replays all 57 jumps and walks into the white pill using normal
+`render_ending.py` replays all 59 jumps and walks into the white pill using normal
 physics before recording the ending. Its displayed statistics come from that
 simulated climb. [Preview with sound](ending-preview.mp4).
 Tests cover one-shot collection, frozen results, replay and restart, paused input

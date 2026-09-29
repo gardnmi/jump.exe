@@ -188,10 +188,10 @@ def dressing(c,rank):
         # Finished work inhabits both terminal panes: shared, growing, illuminated.
         for x,color in ((19,CYAN),(154,GREEN)):
             for i in range(4):
-                yy=149+i*15
+                yy=380+i*15
                 rect(c,x,yy,4,4,mix(color,WHITE,.25))
                 rect(c,x+9,yy+1,71-i%2*15,2,mix(s['panel'],TEXT,.6))
-        label(c,'STILL MAKING THINGS.',32,252,14,mix(TEXT,CYAN,.25))
+        label(c,'STILL MAKING THINGS.',32,495,14,mix(TEXT,CYAN,.25))
 
 
 def animate(c,rank,t):
@@ -236,5 +236,5 @@ def animate(c,rank,t):
             for i in range(5):rect(c,16+i*20,116,14,3,GREEN if int(t*1.5)%6>i else s['panel'])
         elif rank==14:
             for i in range(5):
-                x=30+i*46;yy=272+round(math.sin(t*.7+i)*2)
+                x=30+i*46;yy=521+round(math.sin(t*.7+i)*2)
                 rect(c,x,yy,2,2,mix(CYAN,WHITE,.25))

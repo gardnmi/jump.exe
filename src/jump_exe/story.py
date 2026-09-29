@@ -36,7 +36,7 @@ PROPS = (
      ('notepad','shelf',.2,'')),
     (('keyboard','branch',.5,'manual'), ('cable','fork',.5,'joined'), ('plant','floor',.11,'')),
     (('plant','entry',.77,''),),
-    (('keyboard','landing',.85,'manual'), ('coffee','entry',.4,''),
+    (('keyboard','bank',.32,'manual'), ('coffee','entry',.4,''),
      ('plant','entry',.1,''), ('books','entry',.79,'')),
 )
 

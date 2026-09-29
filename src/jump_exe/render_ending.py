@@ -9,7 +9,7 @@ from .desktop_style import DEEP
 from .ending import focus_summit
 from .model import King,Tower,Camera,ledges
 from .story import Story,world_point
-from .course import WHITE_PILL
+from .course import WHITE_PILL,ROUTE
 from .routecheck import solve
 from .physics_profile import PROFILE
 from .music import ASSETS,VOLUME
@@ -93,7 +93,7 @@ def render():
         encoder.stdin.close()
         if encoder.wait():raise RuntimeError('Ending video encoding failed')
     sheet.write_to_png(str(docs/'ending-storyboard.png'))
-    print(f'57-jump climb + pill collected; ending stats: {story.ending.stats}')
+    print(f'{len(ROUTE)-1}-jump climb + pill collected; ending stats: {story.ending.stats}')
     print(path)
 
 
