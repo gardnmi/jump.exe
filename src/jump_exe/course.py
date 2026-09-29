@@ -124,10 +124,10 @@ ROOMS = (
          'Climb a shared workstation: cross the USB hub, circle its connectors, then reach the connected terminal.',
          'The motherboard forms a basin. Earlier precision gives way to generous cable connections.', 'pair'),
     Room('TESTS GREEN',(335,-4110,140,270),(
-        b('entry',0,234,95,18,'panel'), b('bridge',55,138,85,14,'panel'),
-        b('exit',0,44,95,18,'panel'), b('rail',132,44,8,94,'case'),
+        b('entry',0,234,95,18,'panel'), b('bridge',104,126,36,14,'panel'),
+        b('exit',0,44,72,18,'panel'),
     ),('entry','bridge','exit'),
-         'Climb green CI jobs, then bank off the visible right-hand status rail to reach MERGE.',
+         'Jump from the supported left side of BUILD OK to the small right-hand TESTS job, then reverse from its center toward the recessed MERGE ledge.',
          'The outer edge remains exposed; the shared workstation below catches inward mistakes.', 'ci'),
     Room('ENJOY THE RIDE',(20,-4700,295,550),(
         b('entry',196,508,99,24,'key'), b('landing',22,406,42,18,'key'),

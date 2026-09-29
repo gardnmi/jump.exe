@@ -86,9 +86,9 @@ The first seven jumps each have at least five consecutive successful charge valu
 on the seed-42 reference route. A mistiming audit perturbs each selected charge by
 ±2, ±4 and ±8 ticks, clamped to the supported range. On the 1600×900, seed-42 course:
 
-- 209 tested attempts miss the intended landing.
-- 155 of those are caught in the same window.
-- Seventeen lose at least two native screen heights (720 world units).
+- 211 tested attempts miss the intended landing.
+- 154 of those are caught in the same window.
+- Eighteen lose at least two native screen heights (720 world units).
 - The largest tested setback from either of the first two windows is 104 world units.
 - An undercharged first crossing and a rebound off its entry both land on the
   settings window's lower sill; a jump back to the keyboard rejoins the route.

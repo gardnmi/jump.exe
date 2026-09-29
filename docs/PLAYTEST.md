@@ -172,6 +172,28 @@ The artwork follows the longer climb, and the ending camera frames its upper
 330 units. Celebration characters perch on the new real platforms, with the
 Rust-to-assembly terminal fitted between CTRL and CHECKS PASS.
 
+## Follow-up: the CI jump needs a real landing target
+
+Player feedback identified a forced edge overhang on BUILD OK: reaching the wide
+TESTS OK shelf required standing with the character's center at or beyond the
+left edge of the launch platform.
+
+TESTS is now a 36-unit platform at the far right, recessed 49 units from the old
+shelf's left edge and raised 12 units. The vertical status rail is removed.
+MERGE is recessed to 72 units wide, giving the return jump clear space while
+preserving a supported launch into the final room.
+
+The incoming jump works from the supported left side of BUILD OK; the return works from
+the middle of TESTS. Both have at least three consecutive successful charge values
+across four display shapes and seeds 0, 1, and 42. Tests require the entire physics
+body to stand on the launch surface, a direct flight with no rebound, and a
+supported departure from MERGE into the summit room. Full charge misses the two
+internal targets; the smaller landing preserves the timing challenge. The middle
+step cannot be skipped, and the full route still contains 59 jumps.
+
+[BUILD OK → TESTS](ci-jump-proof.png) · [TESTS → MERGE](ci-exit-jump-proof.png).
+The traces use normal charged jumps and the same renderer as the game.
+
 ## Summit finale
 
 `render_ending.py` replays all 59 jumps and walks into the white pill using normal

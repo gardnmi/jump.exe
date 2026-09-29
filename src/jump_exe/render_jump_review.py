@@ -17,6 +17,8 @@ JUMPS = {
     'revert': (5,'release','exit',26,'UNDO','REVERT','Overhang recessed; height unchanged.'),
     'tests': (7,'entry','fold',26,'UNIT TESTS','INTEGRATION','Test tabs recessed; heights unchanged.'),
     'tests-exit': (7,'fold','exit',26,'INTEGRATION','ONLY TESTS','Upper tab recessed; height unchanged.'),
+    'ci': (13,'entry','bridge',28,'BUILD OK','TESTS','Small platform moved to the right.'),
+    'ci-exit': (13,'bridge','exit',27,'TESTS','MERGE','Rail removed; MERGE overhang recessed.'),
 }
 
 
@@ -25,9 +27,9 @@ class Replay:
         (self.rank,source,target,self.charge_frames,self.source_label,
          self.target_label,self.change)=JUMPS[jump]
         self.target=f'{self.rank}:{target}'
-        self.direction=1 if jump in ('revert','tests') else -1
-        self.fraction={'revert':1/3,'tests':.24,'tests-exit':.54}.get(jump,.5)
-        self.position={'revert':'LEFT THIRD','tests':'LEFT QUARTER'}.get(jump,'MIDDLE')
+        self.direction=1 if jump in ('revert','tests','ci') else -1
+        self.fraction={'revert':1/3,'tests':.24,'tests-exit':.54,'ci':.2}.get(jump,.5)
+        self.position={'revert':'LEFT THIRD','tests':'LEFT QUARTER','ci':'SUPPORTED LEFT SIDE'}.get(jump,'MIDDLE')
         self.tolerance=5 if jump in ('sleep','desk') else 3
         self.bounds=(0,0,2048,1152) if jump in ('revert','tests','tests-exit') else (0,0,1600,900)
         self.tower=Tower(self.bounds,42)
@@ -63,11 +65,13 @@ def render(path,replay):
     rank=replay.rank;rx,ry,w,h=replay.tower.rectangle(rank);k=replay.king
     c.save();c.translate(24,105)
     rw,rh=ROOMS[rank].rect[2:]
-    tile(c,rw*3,rh*3,rank,rank//3,replay.story.time,events=replay.story.life.room(rank))
+    tile(c,rw*3,rh*3,rank,rank//3,replay.story.time,events=replay.story.life.room(rank),
+         ambient=replay.story.atmosphere.room(rank))
     c.scale(3/k.scale,3/k.scale)
     for x,y in replay.trace:
         c.set_source_rgb(*YELLOW);c.rectangle(x-rx,y-ry,k.scale,k.scale);c.fill()
-    knight(c,k.x-rx,k.y-ry,k.facing,k.charge,replay.story.time,k.scale,k.pose)
+    knight(c,k.x-rx,k.y-ry,k.facing,k.charge,replay.story.time,k.scale,k.pose,
+           replay.story.atmosphere.avatar)
     c.restore()
     direction='Right / D' if replay.direction>0 else 'Left / A'
     lines=((f'{replay.source_label} / {replay.position}',CYAN),('',TEXT),
