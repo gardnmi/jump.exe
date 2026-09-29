@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/gardnmi/jump.exe/compare/v0.1.2...v0.1.3) (2026-09-29)
+
+
+### Bug Fixes
+
+* make the summit a precision jumping gauntlet ([#9](https://github.com/gardnmi/jump.exe/issues/9)) ([971d8a3](https://github.com/gardnmi/jump.exe/commit/971d8a30b32615e07d515a8c97b65819b21671e0))
+
 ## [0.1.2](https://github.com/gardnmi/jump.exe/compare/v0.1.1...v0.1.2) (2026-09-29)
 
 
