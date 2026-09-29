@@ -18,6 +18,10 @@ Denial, Anger, Bargaining, Depression, and Acceptance each have their own deskto
 scenes, reactive creatures, environmental story, and music. A caretaker offers
 some context at the bottom. A small, ridiculous reward waits at the top.
 
+The desktop reacts to your climb: hot vents ruffle your hoodie, permission scans
+trace your silhouette, neglected screens hold delayed reflections, and completed
+builds light up connected hardware. [See the environmental effects](docs/ENVIRONMENT.md).
+
 Inspired by Jump King and Omarchy's Osaka Jade aesthetic. This is an independent
 game with its own art and world, and an early playable release.
 

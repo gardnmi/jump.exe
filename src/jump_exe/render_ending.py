@@ -54,7 +54,7 @@ def frame(tower,king,camera,story):
         rank=int(key)
         c.save();c.rectangle(0,28,1280,692);c.clip();c.translate(x,round(y))
         tile(c,w,h,rank,rank//3,story.time,story.accepted,events=story.life.room(rank),
-             ending=story.ending.state())
+             ending=story.ending.state(),ambient=story.atmosphere.room(rank))
         c.restore()
     hud(c,1280,720,dict(ending=story.ending.state(),sprite_scale=king.scale,focused=True))
     return out

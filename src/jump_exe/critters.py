@@ -66,10 +66,17 @@ BOT=(
     '....gddddg.......',
     '....gg..gg.......',
 )
+MOTH=(
+    '.o...o.',
+    'owwdwwo',
+    '.wddd.w',
+    '..wdw..',
+    '...d...',
+)
 
 
 def creature(c,kind,x,y,t=0.,facing=1,flying=False,cold=False):
-    rows={'duck':DUCK,'penguin':PENGUIN,'bug':BUG,'cat':CAT,'bot':BOT}[kind]
+    rows={'duck':DUCK,'penguin':PENGUIN,'bug':BUG,'cat':CAT,'bot':BOT,'moth':MOTH}[kind]
     colors=dict(d=DEEP,g=MUTED,y=BLUE if cold else YELLOW,w=WHITE,x=DEEP,
                 o=mix(YELLOW,RED,.3),c=CYAN,r=RED,m=mix(JADE,MUTED,.5))
     if kind=='cat':colors.update(g=DEEP,m=MUTED,w=TEXT)
@@ -94,6 +101,9 @@ def creature(c,kind,x,y,t=0.,facing=1,flying=False,cold=False):
         elif int(t*.5)%3==1:
             rect(c,8,-15,3,1,mix(BG,BLUE,.4));rect(c,10,-14,1,1,MUTED)
             rect(c,8,-13,3,1,mix(BG,BLUE,.4))
+    elif kind=='moth' and flying:
+        flap=int(t*16)%2
+        rect(c,-3,-4+flap,2,1,YELLOW);rect(c,2,-4+flap,2,1,YELLOW)
     elif kind=='bot':
         if int(t*1.2)%5==0:rect(c,-4,-9,7,2,DEEP)
         if flying:

@@ -21,7 +21,7 @@ PACKAGES = ('python', 'python-gobject', 'python-cairo', 'gtk3', 'gtk4',
             'gtk4-layer-shell', 'gstreamer', 'gst-plugins-base', 'gst-plugins-good',
             'ttf-cascadia-mono-nerd')
 MODULES = ('__init__', 'resources', 'cli', 'doctor', 'hyprland', 'main', 'overlay',
-           'art', 'character', 'course', 'critters', 'desktop_style', 'devmode',
+           'art', 'atmosphere', 'atmosphere_art', 'character', 'course', 'critters', 'desktop_style', 'devmode',
            'ending', 'environment', 'finale_art', 'landmarks', 'life', 'model',
            'music', 'physics_profile', 'sound', 'stage_scenes', 'story',
            'summit_animation', 'terrain', 'world_details')

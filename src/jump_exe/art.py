@@ -14,6 +14,7 @@ from .critters import reactions
 from .finale_art import draw_finale
 from .ending import in_world
 from .summit_animation import draw_world
+from . import atmosphere_art
 
 INK = TEXT
 GOLD = (.96,.74,.35)
@@ -33,8 +34,8 @@ def text(c,value,x,y,size=12,color=INK):
     c.show_text(value)
 
 
-def knight(c,x,y,facing,charge,phase=0,scale=2,pose='idle'):
-    draw_developer(c,x,y,facing,scale,pose,phase)
+def knight(c,x,y,facing,charge,phase=0,scale=2,pose='idle',effects=None):
+    draw_developer(c,x,y,facing,scale,pose,phase,effects)
 
 
 @lru_cache(maxsize=30)
@@ -75,7 +76,7 @@ def resting_encounters(rank):
     return DesktopLife().room(rank)
 
 
-def tile(target,w,h,rank,level,t=0.,accepted=False,talking=False,events=None,ending=None):
+def tile(target,w,h,rank,level,t=0.,accepted=False,talking=False,events=None,ending=None,ambient=None):
     rw,rh=ROOMS[rank].rect[2:]
     # Compose everything at native resolution, including text, props and motion.
     # Upscale once so no effect or caption introduces a different pixel density.
@@ -90,12 +91,16 @@ def tile(target,w,h,rank,level,t=0.,accepted=False,talking=False,events=None,end
     ambience(c,rw,rh,rank,level,t)
     events=resting_encounters(rank) if events is None else events
     behind(c,rank,t,events)
+    atmosphere_art.behind(c,rank,ambient)
     c.restore()
     c.set_source_surface(room_surface(rank,True),0,0)
     c.get_source().set_filter(cairo.FILTER_NEAREST);c.paint()
     props(c,rank,level,t,accepted,talking,celebrating=in_world(ending))
     front(c,rank,t)
     reactions(c,rank,events,t)
+    c.save();c.rectangle(2,11,rw-4,rh-13);c.clip()
+    atmosphere_art.front(c,rank,ambient)
+    c.restore()
     chrome(c,rw,rh,rank,t)
     if in_world(ending):
         c.save();c.rectangle(1,1,rw-2,rh-2);c.clip()
