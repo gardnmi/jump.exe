@@ -46,7 +46,7 @@ def render(path,t=2.):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output',type=Path,default=ROOT/'docs/story-preview.png')
+    parser.add_argument('--output',type=Path,default=ROOT/'docs/stage-preview.png')
     parser.add_argument('--time',type=float,default=2.)
     parser.add_argument('--frames',type=int,default=1,help='Optional 24 fps sequence, named 0000.png etc in output directory')
     args=parser.parse_args()

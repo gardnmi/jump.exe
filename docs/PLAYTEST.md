@@ -62,7 +62,7 @@ Catch floors remain physical on the way down. All artwork remains inside windows
 
 A second review identified that the previous build's music carried too much of the
 stage distinction. Each group now changes its dominant material, lighting, large
-background motifs and motion cadence. The [five-stage art comparison](story-preview.png)
+background motifs and motion cadence. The [five-stage art comparison](stage-preview.png)
 and [animated room review](world-review.mp4) use the actual game renderer.
 
 Denial combines warm phosphor, a personal photo and worn equipment. Anger uses

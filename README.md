@@ -6,7 +6,9 @@ You are a developer at the bottom of the desktop. The black pill is behind you.
 The white pill is somewhere above fifteen windows, five years of doubt, and
 an unreasonable number of missed jumps.
 
-![The five stages of the desktop climb](docs/story-preview.png)
+<p align="center">
+  <img src="docs/story-preview.png" width="640" alt="jump.exe — Tactical Prompting Adventure. A hoodie-wearing developer leaps up a tower of terminal windows toward the white pill." />
+</p>
 
 Charge a jump, pick a direction, commit. Climb inside real desktop windows and
 leap between them. Hit a wall and bounce back. Miss a ledge and you can fall
@@ -117,6 +119,7 @@ They run without opening desktop windows or an audio device.
 
 [Contributing](CONTRIBUTING.md) · [Release process](docs/RELEASING.md) ·
 [Level design](docs/DESIGN.md) · [Story](docs/STORY.md) · [Art direction](docs/STYLE.md) ·
+[Gameplay art preview](docs/stage-preview.png) ·
 [Ending preview — spoilers](docs/ending-preview.mp4)
 
 Code is [MIT licensed](LICENSE). See the separate [asset terms](assets/LICENSE.md)

@@ -113,7 +113,7 @@ alone does not collect the goal.
 provide the styling reference. This is an original fictional story about a common
 developer experience; the essays supplied earlier were examples, not its script.
 
-[In-game preview](story-preview.png) · [Animation](story-preview.mp4) ·
+[In-game preview](stage-preview.png) · [Animation](story-preview.mp4) ·
 [Reactive encounters](encounters-preview.mp4) ·
 [World animation review](world-review.mp4) ·
 [Denial](world-review/01-denial.png) · [Anger](world-review/02-anger.png) ·

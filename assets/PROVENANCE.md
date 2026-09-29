@@ -4,6 +4,15 @@ The game has an original generic developer character and original environment
 art. It does not bundle reference screenshots, gameplay footage, or website images.
 The third-party movement sound effects are documented below.
 
+## Cover art
+
+[`docs/story-preview.png`](../docs/story-preview.png) is promotional cover art
+generated with the built-in OpenAI image-generation tool. The supplied Jump King
+cover guided the composition; the game's character atlas guided the developer's
+outfit and palette. The [generation prompt](../docs/story-preview.prompt.txt) is
+included. The previous five-stage gameplay illustration is preserved as
+[`docs/stage-preview.png`](../docs/stage-preview.png).
+
 ## Character and environment
 
 `omarchy-developers.png` is the original 1447×1087 RGBA atlas generated for this

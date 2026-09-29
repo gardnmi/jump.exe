@@ -1,0 +1,24 @@
+Use case: ads-marketing / cover-art reimagining.
+Asset type: a polished portrait illustrated game box cover for the GitHub README of "jump.exe".
+
+Input image 1: the supplied Jump King cover, used as the composition and illustrated box-art reference. Reimagine this cover around our game.
+Input image 2: the actual jump.exe character atlas, used ONLY for the identity, outfit, and color palette of the young developer in its first two rows. Do not copy the atlas layout or include the older guide.
+
+Primary request: a witty, beautifully illustrated computer-geek riff on the reference cover. Keep the instantly readable layout: small elegant genre line above an enormous game title, a bold one-line promise underneath, a huge foreshortened leaping hero bursting out of a framed dark ascent scene, ornamental outer corners. Completely redesign the imagery and lettering for jump.exe. Make it look like professional, hand-inked and painted 1990s game box art, with crisp confident contours, rich restrained cel-shaded forms, and subtle matte print grain. This is illustrated promotional key art, not enlarged gameplay pixel sprites or a collage of screenshots.
+
+Composition: portrait, approximately 1024 by 1536. A pale warm cream outer margin, a thin double jade rectangular inner frame, tiny circuit-board / keyboard-trace ornaments in the four corners instead of floral ornaments. Top quarter reserved for fully readable title typography. The developer fills most of the middle and lower cover in an absurdly heroic charged leap: torso turning upward, one bare fist thrust up, one knee kicked toward the right, one enormous foreshortened boot sole toward lower left, entire head, both hands, and both feet visible. The overlapping limbs must be anatomically coherent. Movement sweeps diagonally upward; his amber messenger-bag strap and a coiled keyboard cable trail behind.
+
+Character: the original young generic developer from image 2, translated into lush illustrated box art: jade green zip hoodie with hood over a cream ribbed knit beanie, tiny cyan jacket pins, charcoal jeans, stout dark boots with cream soles, small dark messenger bag with amber strap and a compact mechanical keyboard peeking out. Warm skin, small dark hair fringe, expressive focused face with a little exhausted determination, no celebrity likeness. His hands are bare, not gauntlets. Keep his outfit recognizable from our game.
+
+Background: instead of a castle, an impossible steep tower of clearly recognizable computer application windows rising into the distance. Strong square terminal title bars, close buttons, staggered window ledges, huge keys and connecting cables. Lower windows glow with angry burnt-orange error light; cold blue inactive terminals appear higher; the highest window glows hopeful jade and warm cream around ONE luminous white capsule pill at the summit. The tower should have a strong jagged silhouette behind the foreground figure, not a busy flat grid. Windows are physical platforms in a desktop world. The scene is dark and atmospheric enough for the character and typography to pop. Fine terminal code marks are subordinate texture, not paragraphs of writing.
+
+Palette: Omarchy Osaka Jade — ink-black green, deep forest jade, desaturated sage, warm cream, cyan pinpoints, amber straps, and restrained coral error highlights. Strong cream highlights and green shadow shapes on the hero. Avoid plastic 3D, airbrushed gradients, purple cyberpunk neon, castles, columns, armor, helmets, capes, fantasy weapons, or medieval scenery.
+
+Text, exact spelling, no other large copy:
+Small elegant cream/ink genre line at top: "Tactical Prompting Adventure"
+Main masthead: "jump.exe"
+Use huge custom drawn, chunky blackletter-inspired game lettering with squared computer-like cuts, jade faces, warm cream edging and a bold dark offset shadow. Keep the dot and ".exe" unmistakable and all on one line. Spell j-u-m-p-dot-e-x-e; no Jump King text or logo.
+Subtitle beneath masthead: "THERE'S A WHITE PILL AT THE TOP!"
+Use a crisp legible condensed serif, centered with generous room before the hero's head. The capsule at the summit visually pays off that promise.
+
+Finish: premium cover illustration, charming and funny but visually serious, dramatic foreshortening, intentional light and shadow, no watermark, no invented studio logos, no publisher badges, no actual operating-system logo. Preserve readable negative space around all title text.
