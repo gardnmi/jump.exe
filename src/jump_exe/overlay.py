@@ -72,7 +72,7 @@ class Overlay(Gtk.Application):
             c.rectangle(round(x-ox),round(y-oy),size,size)
             c.fill()
         knight(c,d['x']-ox,d['y']-oy,d['facing'],d['charge'],d.get('phase',0),
-               d['sprite_scale'],d['pose'])
+               d['sprite_scale'],d['pose'],effects=d.get('avatar_fx'))
         hud(c,w,h,d)
 
 

@@ -43,10 +43,11 @@ def render(path,seed=42):
             rank=int(key)
             c.save();c.rectangle(0,28,1280,692);c.clip();c.translate(x,round(y))
             tile(c,w,h,rank,rank//3,story.time,accepted=story.accepted,
-                 events=story.life.room(rank))
+                 events=story.life.room(rank),ambient=story.atmosphere.room(rank))
             c.restore()
         knight(c,king.x,king.y-camera.offset,king.facing,king.charge,
-               king.walk_phase if king.walking else story.time,king.scale,king.pose)
+               king.walk_phase if king.walking else story.time,king.scale,king.pose,
+               story.atmosphere.avatar)
         stage=tower.level_at(king.y)
         text(c,f'{THEMES[stage][0]}  /  {king.jumps:02} JUMPS',18,20,13,ACCENTS[stage])
         text(c,'NORMAL PHYSICS REPLAY / SEED '+str(seed),850,20,12,TEXT)

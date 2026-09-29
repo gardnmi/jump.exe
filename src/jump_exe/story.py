@@ -4,6 +4,7 @@ import random
 from .course import ROOMS, SUMMIT, GUIDE_POINT, WHITE_PILL
 from .life import DesktopLife
 from .ending import Ending
+from .atmosphere import Atmosphere
 
 YEARS = ('YEAR 01', 'YEAR 02', 'YEAR 03', 'YEAR 04', 'YEAR 05')
 GUIDE = (
@@ -67,6 +68,7 @@ class Story:
         self.rng = random.Random(773)
         self.guide_point = (0.,0.)
         self.life = DesktopLife()
+        self.atmosphere = Atmosphere()
         self.ending = Ending()
         self.play_seconds = 0.
         self.longest_fall = 0.
@@ -111,6 +113,7 @@ class Story:
                            and abs(king.y-gy)<35*king.scale)
         self.life.update(dt,king,tower,landing=bool(king.room and self.last_room is None),
                          bounced=self.last_vx*king.vx<0 and king.impact>0)
+        self.atmosphere.update(dt,king,tower,enabled=not dev and not self.ending.active)
         if not dev:
             if king.jumps > self.last_jumps:
                 self.emit(king.x,king.y,king.scale)
@@ -139,5 +142,6 @@ class Story:
                     dialogue=GUIDE[self.page] if self.guide_near and self.page<len(GUIDE) else [],
                     dialogue_page=self.page,accepted=self.accepted,celebration=self.celebration,
                     ending=self.ending.state(),
+                    avatar_fx=dict(self.atmosphere.avatar),
                     encounters={str(rank):self.life.room(rank) for rank in range(len(ROOMS))},
                     particles=[(x,y-camera_offset,life,gold) for x,y,vx,vy,life,gold in self.particles])

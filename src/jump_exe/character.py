@@ -48,8 +48,45 @@ def frame(pose, walk_frame=0):
     return surface
 
 
-def draw(c,x,y,facing,scale,pose,phase=0):
+@lru_cache(maxsize=384)
+def reacted_frame(pose,walk_frame,wind,settle,tint,strength,scan_row):
+    source=frame(pose,walk_frame)
+    body=cairo.ImageSurface(cairo.FORMAT_ARGB32,40,40)
+    c=cairo.Context(body)
+    c.set_source_surface(source,0,0);c.paint()
+    # One-pixel fabric motion: the feet and the physics anchor stay fixed.
+    regions=((0,5,40,11,wind,0),(2,20,15,12,0,settle))
+    for x,y,w,h,dx,dy in regions:
+        if not (dx or dy):continue
+        c.save();c.rectangle(x,y,w,h);c.clip()
+        c.set_operator(cairo.OPERATOR_CLEAR);c.paint()
+        c.set_operator(cairo.OPERATOR_OVER)
+        c.set_source_surface(source,dx,dy);c.paint();c.restore()
+    out=cairo.ImageSurface(cairo.FORMAT_ARGB32,40,40)
+    c=cairo.Context(out)
+    if scan_row>=0:
+        c.save();c.rectangle(0,scan_row-1,40,4);c.clip()
+        c.set_source_rgba(.9,.8,.24,.65)
+        for dx,dy in ((-1,0),(1,0),(0,-1),(0,1)):c.mask_surface(body,dx,dy)
+        c.restore()
+    c.set_source_surface(body,0,0);c.paint()
+    if strength:
+        c.set_source_rgba(*tint,min(.38,strength/16));c.mask_surface(body,0,0)
+        c.save();c.rectangle(24,5,12,26);c.clip()
+        c.set_source_rgba(*tint,min(.25,strength/20));c.mask_surface(body,0,0);c.restore()
+    if scan_row>=0:
+        c.save();c.rectangle(0,scan_row,40,1);c.clip()
+        c.set_source_rgba(.98,.94,.68,.65);c.mask_surface(body,0,0);c.restore()
+    return out
+
+
+def draw(c,x,y,facing,scale,pose,phase=0,effects=None):
     sprite = frame(pose,int(phase)%2)
+    if effects:
+        scan=effects.get('scan',-1)
+        sprite=reacted_frame(pose,int(phase)%2,round(effects.get('wind',0)),
+                            round(effects.get('settle',0)),tuple(effects.get('light',(0,0,0))),
+                            round(effects.get('strength',0)*16),round(6+scan*29) if scan>=0 else -1)
     c.save()
     c.translate(round(x),round(y))
     c.scale(facing*scale,scale)

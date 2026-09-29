@@ -327,7 +327,8 @@ class App:
             c.translate(0,-clip)
             tile(c,rect[2],full_height,int(role),int(role)//3,self.story.time,
                  self.accepted,self.story.guide_near and self.story.page<4,
-                 events=self.story.life.room(int(role)),ending=self.story.ending.state())
+                 events=self.story.life.room(int(role)),ending=self.story.ending.state(),
+                 ambient=self.story.atmosphere.room(int(role)))
 
     def close(self, *_):
         if self.closed:

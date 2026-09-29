@@ -47,11 +47,13 @@ def render(path,samples):
         text(c,labels[i][0],i*640+24,71,16,CYAN)
         c.save();c.translate(origin,98);c.scale(2,2)
         tile(c,w,h,rank,rank//3,sample.story.time,
-             talking=sample.story.guide_near,events=sample.story.life.room(rank))
+             talking=sample.story.guide_near,events=sample.story.life.room(rank),
+             ambient=sample.story.atmosphere.room(rank))
         for px,py,vx,vy,life,gold in sample.story.particles:
             c.set_source_rgba(*JADE,min(1,life*3));c.rectangle(round(px-x),round(py-y),1,1);c.fill()
         k=sample.king
-        knight(c,k.x-x,k.y-y,k.facing,0,k.walk_phase if k.walking else sample.story.time,1,k.pose)
+        knight(c,k.x-x,k.y-y,k.facing,0,k.walk_phase if k.walking else sample.story.time,1,k.pose,
+               sample.story.atmosphere.avatar)
         c.restore()
         text(c,labels[i][1],i*640+24,906,14,TEXT)
     text(c,'Native scene rendering / normal movement and collision / encounters do not alter the jump',24,935,11,MUTED)
