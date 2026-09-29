@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/gardnmi/jump.exe/compare/v0.2.0...v0.2.1) (2026-09-29)
+
+
+### Bug Fixes
+
+* replace the CI overhang jump with a small right-side platform ([#13](https://github.com/gardnmi/jump.exe/issues/13)) ([7d88815](https://github.com/gardnmi/jump.exe/commit/7d8881592d9c2291191df063667c1134be440f83))
+
 ## [0.2.0](https://github.com/gardnmi/jump.exe/compare/v0.1.3...v0.2.0) (2026-09-29)
 
 
